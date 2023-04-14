@@ -1,0 +1,91 @@
+<script src="web3.min.js"></script>
+<script src="app.js"></script>
+<script src="abi.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+
+
+
+    <div class="headTitle" onClick="goHome()">LIQUID CD</div>
+<div class="imageHolder">
+    <img src="rinkebyLogo.png" alt="rinkeby" class="rinkeby">
+</div>
+    <div class= "app" id="wallet">
+        <div class="tokenBox">
+            <div class="title"> Tokens </div>
+            <div class="tokens" id="tokens">
+
+            </div>
+        </div>
+        <div class="toolBox">
+            <div class="title"> Tool Box </div>
+            <div class="tools">
+                <div class="tool clickable button" onclick="buyLP()"> <div class="withdraw">Buy Liquid CD</div> </div>
+                    <div class="sendLP" id="buyLP"> 
+                        <input class="textInputField" inputmode="text" title="Token Address" autocomplete="off" autocorrect="off" type="text" pattern="" placeholder="token A" minlength="1" maxlength="79" spellcheck="false" value="" id="tokenA">
+                        <input class="textInputField" inputmode="text" title="Token Address" autocomplete="off" autocorrect="off" type="text" pattern="" placeholder="token B or type ETH" minlength="1" maxlength="79" spellcheck="false" value="" id="tokenB">
+                        <div class="sendButton clickable" onclick="buyLPButton()"> <div class="send">Buy Liquid CD</div> </div>
+                    </div>
+                
+                <div class="tool clickable button" onclick="sendLP()"> <div class="withdraw">Send Liquid CD</div> </div>
+                    <div class="sendLP" id="sendLP"> 
+                        <div class="tokenId" id="sendTokenId"></div>
+                        <input class="textInputField" inputmode="text" title="Token Address" autocomplete="off" autocorrect="off" type="text" pattern="" placeholder="Recipient Address" minlength="1" maxlength="79" spellcheck="false" value="" id="sendAddress">
+                        <div class="sendButton clickable" onclick="sendButton()"> <div class="send">Send Liquid CD</div> </div>
+                    </div>
+                <div class="tool clickable button" onclick="transferLiquidity()"> <div class="withdraw"> Transfer to Uniswap </div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class= "app" id="buyLPApp">
+        <div class="buyBox">
+            <div class="goBack clickable" onclick="goBack()">Back</div>
+            <div class="buyTitle"> Buy Liquid CD </div>
+            <div class="emptyRight"> </div>
+            <div class="inputBox"> 
+                <div class="titleBox">
+                    <div class="inputTitle"> Input </div>
+                    <div class="balanceTitle"> Balance: 41988500 </div>
+                </div>
+                <div class="inputField">
+                    <input class="addressInputField" inputmode="text" title="Token Address" autocomplete="off" autocorrect="off" type="text" pattern="" placeholder=" Amount of Token A " minlength="1" maxlength="79" spellcheck="false" value="" id="tokenAAmount"onChange="updateTokenBInput()">
+                    <div class="maxButton clickable" onclick="maxTokenA()"> <div class="max"> MAX </div> </div>
+                    <div class="tokenSymbol" id="tokenAsymbol"> 42T </div>
+                </div>
+            </div>
+            <div class="inputBox"> 
+                <div class="titleBox">
+                    <div class="inputTitle"> Input </div>
+                    <div class="balanceTitle"> Balance: 41988500 </div>
+                </div>    
+                <div class="inputField">
+                    <input class="addressInputField" inputmode="text" title="Token Address" autocomplete="off" autocorrect="off" type="text" pattern="" placeholder=" Amount of Token B " minlength="1" maxlength="79" spellcheck="false" value="" id="tokenBAmount" onChange="updateTokenAInput()">
+                    <div class="maxButton clickable" onclick="maxTokenB()"> <div class="max"> MAX </div> </div>
+                    <div class="tokenSymbol" id="tokenBsymbol"> ETH </div>
+                </div>        
+            </div>
+            <div class="inputBox">
+                <div class="lpTitleBox">
+                    <div class="poolPercentage" id="priceBvA"> 0.0001 </div>
+                    <div class="poolPercentage" id="priceAvB"> 10000 </div>
+                    <div class="poolPercentage" id="sharePer"> 0% </div>
+                </div>
+                <div class="lpTitleBox">
+                    <div class="poolPercentage" id="tokenBperTokenA"> ETH per 42T </div>
+                    <div class="poolPercentage" id="tokenAperTokenB"> 42T per ETH </div>
+                    <div class="poolPercentage"> Share of Pool </div>
+                </div>
+                
+            </div>
+            <div class="sendButton clickable" onclick="approve('tokenA')">
+                <div class="send" id="buttonSymbolA"> Approve Token A </div>
+            </div>
+            <div class="sendButton clickable" id="approveB" onclick="approve('tokenB')">
+                <div class="send" id="buttonSymbolB"> Approve Token B </div>
+            </div>
+            <div class="sendButton clickable" onclick="addLiquidity()">
+                <div class="send"> Purchase Liquid CD </div>
+            </div>
+            
+        </div>
+    </div>

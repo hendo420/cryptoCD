@@ -1,0 +1,130 @@
+<script src="web3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="main.css">
+
+<script>
+
+window.addEventListener('load', async () => {
+    // Modern dapp browsers...
+    if (window.ethereum) {
+        window.web3 = new Web3(ethereum);
+        try {
+            // Request account access if needed
+            await ethereum.enable();
+            // Acccounts now exposed
+            ////web3.eth.getAccounts().then(e => start(e[0]) );
+        } catch (error) {
+            // User denied account access...
+        }
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+        window.web3 = new Web3(web3.currentProvider);
+        // Acccounts always exposed
+        web3.eth.getAccounts().then(e => start(e[0]) );
+    }
+    // Non-dapp browsers...
+    else {
+        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+    }
+});    
+    
+var faucetABI = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "emptyFaucet",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_address",
+				"type": "address"
+			}
+		],
+		"name": "getTimeLeft",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_time",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenAddress",
+				"type": "address"
+			}
+		],
+		"name": "setTokenAddress",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tapFaucet",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "tokenAddress",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+
+var faucetAddress = "0x121742750a56f4AfBF8f66f7c6dE829b130de115";
+const faucetContract = web3.eth.contract(faucetABI);
+const faucet = faucetContract.at(faucetAddress);
+    
+function useFaucet() {
+    faucet.tapFaucet((error, result) => (console.log(result)));
+}
+    
+function goHome() {
+    //window.location.search = "";
+    window.location.href = "https://liquidcd.finance/";
+}
+
+</script>
+
+
+    <div class="headTitle" onClick="goHome()">LIQUID CD</div>
+<div class="imageHolder">
+    <img src="rinkebyLogo.png" alt="rinkeby" class="rinkeby">
+</div>
+
+<div class= "app" id="factory">
+    <div class= "title">LCD Faucet</div>
+    <div class="tokenAddress">Token Address: 0xd2Dd15356b3A85396b44fb1d1e1c58e1ca60EC5C</div>
+    <div class="faucetText">You may claim LCD Tokens every 4 hours.</div>
+    
+
+    
+    <div class="buttonContainer">
+        <button class="transferLiquidity" id="transfer" onClick = "useFaucet()"> <div class="buttonText" id="creatCD"> Get LCD Tokens </div> </button>
+    </div> 
+    
+</div>

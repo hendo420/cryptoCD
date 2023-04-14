@@ -1,0 +1,451 @@
+html {
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+font-family: Inter, sans-serif;
+    font-size: 16px;
+    
+}
+
+body { 
+    background-color:rgb(44, 47, 54);;
+}
+
+.app {
+    background-color:rgb(33, 36, 41);;
+    color: white;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+    margin-bottom:auto;
+    width: 420px;
+    /*height: 800px;*/
+    height: auto;
+    border-radius: 30px;
+    padding-bottom: 5px;
+}
+
+.textInputField {
+    color: rgb(255, 255, 255);
+    background-color: rgb(33, 36, 41);
+    outline: none;
+    border: none;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 24px;
+    flex: 1 1 auto;
+    appearance: textfield;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px;
+    /* width: 0px; */
+    position: relative;
+    margin-left: 15px;
+    max-width: 200px;
+}
+
+
+
+.transferLiquidity {
+    background-color: rgb(255, 26, 26);
+    color: white;
+    cursor: auto;
+    box-shadow: none;
+    border: 1px solid transparent;
+    outline: none;
+    opacity: 1;
+    border-radius: 10px;
+    height: 100%;
+    width:100%;
+}
+
+.currentStats {
+    margin-top:15px;
+    margin-left:-1px;
+    position:relative;
+    bottom:0;
+    left:0;
+    height:70px;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgb(44, 47, 54);
+}
+
+.time {
+    margin-top:10px;
+    margin-left:-1px;
+    position:relative;
+    bottom:0;
+    left:0;
+    height:70px;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgb(44, 47, 54);
+}
+
+.title {
+    font-size:20px; 
+    font-weight: 800;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 3rem;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.headTitle {
+    font-size:35px; 
+    font-weight: 800;
+    padding-top: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 3rem;
+    justify-content: space-evenly;
+    color: white;
+    cursor: pointer;
+}
+
+svg[Attributes Style] {
+    width: 16;
+    height: 16;
+    fill: none;
+    stroke: rgb(195, 197, 203);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.add {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    width: 100%;
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+
+}
+
+.tokenBox {
+    font-family: Arial, Helvetica, sans-serif;
+    /*display: flex;*/
+    color: white;
+    height: 70px;
+    border-radius: 20px;
+    border: 1px solid rgb(44, 47, 54);
+    background-color: rgb(33, 36, 41);
+    margin: 20px 15px 15px 15px;
+}
+
+.textBox {
+    font-family: Arial, Helvetica, sans-serif;
+    /*display: flex;*/
+    color: white;
+    min-height: 70px;
+    border-radius: 20px;
+    border: 1px solid rgb(44, 47, 54);
+    background-color: rgb(33, 36, 41);
+    margin: 20px 15px 15px 15px;
+}
+
+.text {
+    margin: 10px 10px 10px 10px;
+}
+/*
+.addLiquidity:disabled {
+    background-color: rgb(64, 68, 79);
+    color: rgb(108, 114, 132);
+    cursor: auto;
+    box-shadow: none;
+    border: 1px solid transparent;
+    outline: none;
+    opacity: 1;
+    border-radius: 10px;
+    height: 100%;
+    width:100%;
+}
+*/
+.addLiquidity {
+    background-color: rgb(64, 68, 79);
+    color: rgb(108, 114, 132);
+    cursor: auto;
+    box-shadow: none;
+    border: 1px solid transparent;
+    outline: none;
+    opacity: 1;
+    border-radius: 10px;
+    height: 100%;
+    width:100%;
+}
+
+.buttonText {
+    box-sizing: border-box;
+    margin: 0px;
+    min-width: 0px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.buttonContainer {
+    height: 50px;
+    margin: 15px 15px 15px 15px;
+}
+
+.buttonContainerText {
+    height: 50px;
+    margin: 15px 15px 15px 15px;
+}
+
+.tokenBoxInner {
+    margin: 5px 5px 5px 5px;
+    position:relative;
+    height:15px;
+    width: 100%;
+    /*background-color:blue;*/
+}
+
+
+.inputTitle {
+    position: absolute;
+    left:10px;
+    top:0px;
+}
+
+.tokenBalance {
+    position: absolute;
+    right:20px;
+    top:0px;
+}
+
+.input {
+    position:relative;
+    height:30px;
+    width:100%;
+    /*background-color:aqua;*/
+    margin-top:10px;
+}
+
+.tokenInput {
+    position:relative;
+    height:30px;
+    width:100%;
+    /*background-color:aqua;*/
+    margin-top:22px;
+    margin-left: 5px;
+}
+
+.tokenInputField {
+    color: rgb(255, 255, 255);
+    background-color: rgb(33, 36, 41);
+    outline: none;
+    border: none;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 24px;
+    flex: 1 1 auto;
+    appearance: textfield;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px;
+    /*width: 0px;*/
+    position: relative;
+    margin-left:15px;
+    max-width:200px;
+}
+
+
+.addressInput {
+    position:relative;
+    height:30px;
+    width:100%;
+    /*background-color:aqua;*/
+    margin-top:10px;
+}
+
+
+
+.tokenID{
+    -webkit-box-align: center;
+    align-items: center;
+    height: 2.2rem;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: rgb(33, 36, 41);
+    color: rgb(255, 255, 255);
+    border-radius: 12px;
+    box-shadow: none;
+    outline: none;
+    user-select: none;
+    border: none;
+    padding: 0px 0.5rem;
+}
+
+.maxButton {
+    height: 28px;
+    background-color: rgba(21, 61, 111, 0.44);
+    border: 1px solid rgba(21, 61, 111, 0.44);
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    color: rgb(109, 168, 255);  
+    margin-top:-5px;
+}
+
+.tokenID {
+    width:15px;
+    position:absolute;
+    top:5px;
+    right:40px;
+}
+
+.pricesTop {
+    margin: 5px 5px 5px 0px;
+    position:relative;
+    height:15px;
+    width: 100%;
+}
+.timeTop {
+    margin: 5px 5px 5px 0px;
+    text-align:center;
+    position:relative;
+    height:15px;
+    width: 100%;
+}
+
+.time {
+    margin: 5px 5px 5px 0px;
+    position:relative;
+    text-align: center;
+    height:15px;
+    width: 100%;
+}
+
+.pricesBottom {
+    margin-top:5px;
+    margin-left:-1px;
+    position:relative;
+    bottom:0;
+    left:0;
+    height:45px;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgb(44, 47, 54);
+}
+
+.pricesBottomCover {
+    margin-top:5px;
+    margin-left:-1px;
+    position:relative;
+    bottom:0;
+    left:0;
+    height:45px;
+    width: 100%;
+    border-radius: 24px;
+    border: 1px solid rgb(44, 47, 54);
+    background-color: springgreen;
+    text-align:center;
+}
+
+.matureLabel {
+    position: relative;
+    width:100%;
+    height:15px;
+    font-size:16px;
+    margin-top: 15px;
+}
+
+.priceTitle {
+    position: absolute;
+    top:0px;
+    left:15px;
+    font-size:16px;
+
+}
+
+.timeTitle {
+    position: absolute;
+    text-align: center;
+    top:0px;
+    left:15px;
+    font-size:16px;
+}
+
+.imageHolder {
+    
+    width: 120px;
+    height: 50px;
+        margin-left: auto;
+    margin-right: auto;
+}
+
+.rinkeby {
+    width: 100%;
+    height: auto;
+}
+
+.prices {
+    position:relative;
+    height: 100%;
+    width: 100%;
+    height: 35px;
+    width:380px;
+    margin: 5px 5px 5px 5px;
+}
+
+.priceColumn {
+    position: relative;
+    height:100%;
+    width:33.3%;
+    float: left;
+}
+
+.statColumn {
+    position: relative;
+    height:100%;
+    width:25%;
+    float: left;
+}
+
+.priceRow {
+    position: relative;
+    width:100%;
+    height:100%;
+}
+
+.tokenPrice {
+    position: relative;
+    text-align: center;
+}
+
+.tokenPriceLabel {
+    position: relative;
+    margin-top:1px;
+    text-align: center;
+    font-size:14px;
+}
+
+.tokenAddress {
+    position: relative;
+    font-size: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.faucetText {
+    position: relative;
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    margin-top: 15px;
+}

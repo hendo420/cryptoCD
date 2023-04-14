@@ -1,0 +1,1717 @@
+<script>
+
+tokenABI = [
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "account",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"internalType": "uint8",
+				"name": "",
+				"type": "uint8"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "subtractedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "decreaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "addedValue",
+				"type": "uint256"
+			}
+		],
+		"name": "increaseAllowance",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "makeUnchangeable",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_poolAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_CDburnerAddress",
+				"type": "address"
+			}
+		],
+		"name": "setPoolAndBurner",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "sender",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "recipient",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amount",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "unchangeable",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+];    
+
+liquidCDABI = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "_approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "_userAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "totalLP",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "bonusLP",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "penaltyLP",
+				"type": "uint256"
+			}
+		],
+		"name": "CDdeath",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "tokenA",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "tokenB",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountA",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "amountB",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "_LP",
+				"type": "uint256"
+			}
+		],
+		"name": "CreateCD",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "tokenA",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "tokenB",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_hours",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountADesired",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountBDesired",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountAMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountBMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"name": "addLiquidity",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "tokenA",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_hours",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountADesired",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountAMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountBMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"name": "addLiquidityETH",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "count",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "exists",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "_exists",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getAge",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_time",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "_operator",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getBonus",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_bonus",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getLPbalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_balance",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getPenalty",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_penalty",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getToken",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_timeStamp",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_maturity",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_tokenA",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_tokenB",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_LP",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenABonus",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenBBonus",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_tokenA",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_tokenB",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_hours",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_LP",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenABonus",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenBBonus",
+				"type": "uint256"
+			}
+		],
+		"name": "mint",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "ownershipTokenCount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "penaltyBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "poolBalance",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "_data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "_approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenIndexToApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenIndexToOwner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "tokensOfOwner",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "ownerTokens",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "_total",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferLP",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	}
+];
+    
+UNIABI = [
+	{
+		"inputs": [],
+		"name": "WETH",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "pure",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountTokenDesired",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountTokenMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountETHMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"name": "addLiquidityETH",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountToken",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountETH",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "liquidity",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "tokenA",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "tokenB",
+				"type": "address"
+			}
+		],
+		"name": "getPair",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "pair",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "liquidity",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountTokenMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountETHMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"name": "removeLiquidityETH",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountToken",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountETH",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountOutMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address[]",
+				"name": "path",
+				"type": "address[]"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"name": "swapExactETHForTokens",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "amounts",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "amountOutMin",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address[]",
+				"name": "path",
+				"type": "address[]"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			}
+		],
+		"name": "swapExactTokensForETH",
+		"outputs": [
+			{
+				"internalType": "uint256[]",
+				"name": "amounts",
+				"type": "uint256[]"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	}
+];
+    
+var userAddress = "";
+var ethBalance = "";
+var COIN = 1000000000000000000;
+    
+window.addEventListener('load', async () => {
+    // Modern dapp browsers...
+    if (window.ethereum) {
+        window.web3 = new Web3(ethereum);
+        try {
+            // Request account access if needed
+            await ethereum.enable();
+            // Acccounts now exposed
+            web3.eth.getAccounts().then(e => start(e[0]) );
+        } catch (error) {
+            // User denied account access...
+        }
+    }
+    // Legacy dapp browsers...
+    else if (window.web3) {
+        window.web3 = new Web3(web3.currentProvider);
+        // Acccounts always exposed
+        web3.eth.getAccounts().then(e => start(e[0]) );
+    }
+    // Non-dapp browsers...
+    else {
+        console.log('Non-Ethereum browser detected. You should consider trying MetaMask!');
+    }
+});
+    
+uniFactoryAddress = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f";
+//WETHaddress = "0xc778417E063141139Fce010982780140Aa0cD5Ab";
+
+liquidCDAddress = "0x4E7379d627F92A3A2282e6883cD60a62802A22EC";//change this one
+
+maturity = 7200; //2 hours  //will change to 30 days at launch    
+
+const liquidCDContract = web3.eth.contract(liquidCDABI);
+const liquidCD = liquidCDContract.at(liquidCDAddress);
+    
+const tokenContract = web3.eth.contract(tokenABI);
+const poolContract = web3.eth.contract(tokenABI);
+    
+const uniFactoryContract = web3.eth.contract(UNIABI);
+const uniFactory = uniFactoryContract.at(uniFactoryAddress);
+    
+const WETHContract = web3.eth.contract(tokenABI);
+
+
+function start(_address) {
+    document.getElementById("buyLPApp").style.display = "none";
+    userAddress = _address;
+    getETHbalance();
+    tokensOfOwner(userAddress);
+}
+    
+function getETHbalance() {
+    web3.eth.getBalance(userAddress,(err, res) => {
+      if (!err) {
+		console.log(res.toString()/COIN);
+        ethBalance = res.toString()/COIN;
+      } else {
+        output = "Error";
+      }
+    })
+}
+    
+poolAddress = "";
+    
+function getPoolAddress(_tokenA, _tokenB) {
+    uniFactory.getPair(_tokenA, _tokenB,(err, res) => {//need a way to get pool address
+        if (!err) {
+            console.log(res.toString());
+            poolAddress = res.toString(); 
+            //
+            
+            getPoolTokenBalance(poolAddress);
+        } else {
+            output = "Error";
+        }
+    })
+}
+
+_tokenABalance = 0;
+_tokenBBalance = 0;
+    
+function getPoolTokenBalance(_poolAddress) {
+    _tokenA = tokenContract.at(tokenA);
+    if(tokenB == "ETH") {
+        _tokenB = tokenContract.at(WETHAddress);
+    } else {
+        _tokenB = tokenContract.at(tokenB);
+    }
+    _tokenA.balanceOf(_poolAddress,(err, res) => {//need a way to get pool address
+        if (!err) {
+            console.log(res);
+            _tokenABalance = res.toNumber()/COIN;
+            _tokenB.balanceOf(_poolAddress,(err, res2) => {//need a way to get pool address
+                if (!err) {
+                    console.log(res2);
+                    _tokenBBalance = res2.toNumber()/COIN;
+                    //update strings of tokenA vs tokenB
+                    document.getElementById("priceBvA").innerHTML = (_tokenBBalance/_tokenABalance).toFixed(5);
+                    document.getElementById("priceAvB").innerHTML = (_tokenABalance/_tokenBBalance).toFixed(5);
+                } else {
+                    output = "Error";
+                }
+            })
+            
+        } else {
+            output = "Error";
+        }
+    })
+}
+    
+
+    
+/*
+function search(){
+    window.location.search = "?" + document.getElementById("tokenAddress").value;
+}
+*/
+    
+function goHome() {
+    window.location.search = "";
+}
+    
+function getToken(tokenId) {
+    liquidCD.getToken(tokenId, (err, res) => {//need a way to get pool address
+        if (!err) {
+            //console.log(res);
+            console.log("tokenId " + tokenId);
+            var timeStamp = parseInt(res[0]);
+            console.log("timestamp " + timeStamp);
+            var maturity = parseInt(res[1]);
+            console.log("maturity " + maturity);
+            var tokenA = res[2]
+            console.log("tokenA " + tokenA);
+            var tokenB = res[3];
+            console.log("tokenB " + tokenB);
+            var LP = parseInt(res[4])/COIN;
+            console.log("LP " + LP);
+            var tokenABonus = parseInt(res[5])/COIN;
+            console.log("TokenA Bonus " + tokenABonus);
+            var tokenBBonus = parseInt(res[6])/COIN;
+            console.log("TokenA Bonus " + tokenBBonus);
+            timeLeft = Math.floor(maturity - ((Date.now()/1000) - timeStamp));
+            document.getElementById("tokens").innerHTML += "<div class='token clickable' onclick='selectToken(" + tokenId + ")' id='token" + tokenId + "'> <div class='tokenId'> Token " + tokenId + "</div> <div class='timeLeft'> Time till Mature: <br>" + getTime((timeLeft).toFixed(0)) + "</div><div class='maturity'> Maturity:  " + maturity/3600 + " hours </div><div class='tokenAddress'> TokenA: " + tokenA.slice(0, 6) + "..." + tokenA.slice(36, 42) + "</div><div class='tokenAddress'> TokenB: " + tokenB.slice(0, 6) + "..." + tokenB.slice(36, 42) + "</div><div class='LP'> LP: " + LP.toFixed(4) + "</div><div class='tokenBonus'> TokenA Bonus: " + tokenABonus.toFixed(4) +"</div><div class='tokenBonus'> TokenB Bonus: " + tokenBBonus.toFixed(4) + "</div></div>";
+            
+        } else {
+            output = "Error";
+        }
+    })
+}
+    
+var test;
+    
+function poolBalance(tokenA, tokenB) {
+    liquidCD.poolBalance(tokenA, tokenB, (err, res) => {
+        if (!err) {
+            console.log(res.toString()/COIN);
+            //test = res;
+        } else {
+            output = "Error";
+        }
+    })
+}
+    
+
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = a.getFullYear();
+  var month = months[a.getMonth()];
+  var date = a.getDate();
+  var hour = a.getHours();
+  var min = a.getMinutes();
+  var sec = a.getSeconds();
+  var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+  return time;
+}
+console.log(timeConverter(0));
+    
+    
+function secondsToHms(d) {
+    d = Number(d);
+    var h = Math.floor(d / 3600);
+    var m = Math.floor(d % 3600 / 60);
+
+    var hDisplay = h > 0 ? h + (h == 1 ? " hour, " : " hours, ") : "";
+    var mDisplay = m > 0 ? m + (m == 1 ? " minute " : " minutes ") : "";
+    return hDisplay + mDisplay; 
+}
+    
+function getTime(seconds)
+{ // day, h, m and s
+    if(seconds >= 0){
+  var days     = Math.floor(seconds / (24*60*60));
+      seconds -= days    * (24*60*60);
+  var hours    = Math.floor(seconds / (60*60));
+      seconds -= hours   * (60*60);
+  var minutes  = Math.floor(seconds / (60));
+      seconds -= minutes * (60);
+  return ((0<days)?(days+" day, "):"")+hours+"h "+minutes+"m";
+    } else {
+        return "CD is Mature";
+    }
+}
+    
+var usersTokens = [];
+    
+function tokensOfOwner(userAddress) {
+    liquidCD.tokensOfOwner(userAddress, (err, res) => {//need a way to get pool address
+        if (!err) {
+            //console.log(res[0] + " , " + res[1]);
+            //console.log(res.length);
+            //usersTokens = res;
+            for (i = 0; i < res.length; i++) {
+                usersTokens.push(parseInt(res[i]));
+                getToken(parseInt(res[i]));
+            }
+        } else {
+            output = "Error";
+        }
+    })
+}
+
+var tokenId = 9999999999;
+    
+function selectToken(_tokenId) {//change color
+    tokenId = _tokenId;
+    for(i=0; i<usersTokens.length; i++){
+        document.getElementById("token"+usersTokens[i]).style.borderColor = "rgb(44, 47, 54)";
+    }
+    document.getElementById("token"+tokenId).style.borderColor = "red";
+}
+    
+function transferLiquidity() {
+    if(tokenId != 9999999999){
+        liquidCD.transferLP(tokenId, (error, result) => (console.log(result)));
+    }
+}
+    
+function sendLP(){
+    if(tokenId != 9999999999){
+        if(document.getElementById("sendLP").style.display == "none" || document.getElementById("sendLP").style.display == "") {
+            document.getElementById("sendLP").style.display = "block";
+        } else {
+            document.getElementById("sendLP").style.display = "none";
+        }
+        document.getElementById("sendTokenId").innerHTML = "Send Token: " + tokenId;
+    }
+}
+    
+function buyLP(){
+
+        if(document.getElementById("buyLP").style.display == "none" || document.getElementById("buyLP").style.display == "") {
+            document.getElementById("buyLP").style.display = "block";
+        } else {
+            document.getElementById("buyLP").style.display = "none";
+        }
+        //document.getElementById("sendTokenId").innerHTML = "Send Token: " + tokenId;
+}
+    
+function sendButton(){
+    liquidCD.transfer(document.getElementById("sendAddress").value, tokenId, (error, result) => (console.log(result)));
+}
+    
+var tokenA;
+var tokenB;
+var hours = 2;
+var WETHAddress = "0xc778417E063141139Fce010982780140Aa0cD5Ab";
+    
+    //getPoolAddress(_tokenA, _tokenB)
+function buyLPButton() {
+    tokenA = document.getElementById("tokenA").value
+    tokenB = document.getElementById("tokenB").value
+    document.getElementById("wallet").style.display = "none";
+    document.getElementById("buyLPApp").style.display = "block";
+    
+    if(tokenB == "ETH" || tokenB == "eth" || tokenB == "Eth" || tokenB == "Ethereum" || tokenB == "ethereum") {//this goes somewhere else
+        document.getElementById("approveB").style.display = "none";
+        getPoolAddress(tokenA, WETHAddress);
+        //change symbols
+        changeSymbol(tokenA, "ETH");
+    } else {
+        getPoolAddress(tokenA, tokenB);
+        //change symbols
+        changeSymbol(tokenA, tokenB);
+    }
+}
+    
+function changeSymbol(_tokenA, _tokenB) {
+    symbolA = "";
+    symbolB = "";
+    tokenAinterface = tokenContract.at(_tokenA);
+    tokenBinterface = tokenContract.at(_tokenB);
+    tokenAinterface.symbol((err, res) => {//need a way to get pool address
+        if (!err) {
+            console.log(res.toString());
+            symbolA = res.toString();
+            if(_tokenB == "ETH") {
+                document.getElementById("tokenAsymbol").innerHTML = symbolA;
+                document.getElementById("tokenBsymbol").innerHTML = "ETH";
+                //tokenBperTokenA
+                document.getElementById("tokenBperTokenA").innerHTML = "ETH per " + symbolA;
+                document.getElementById("tokenAperTokenB").innerHTML = symbolA + " per ETH";
+                
+                document.getElementById("buttonSymbolA").innerHTML = "Approve " + symbolA;
+                //document.getElementById("buttonSymbolB").innerHTML = "Approve 
+                document.getElementById("tokenAAmount").placeholder = "Amount of " + symbolA;
+                document.getElementById("tokenBAmount").placeholder = "Amount of ETH";
+            } else {
+                tokenBinterface.symbol((err, res) => {//need a way to get pool address
+                    if (!err) {
+                        console.log(res.toString());
+                        symbolB = res.toString();
+                        //ok now you can change the symbols
+                        console.log("success " + symbolA + ", " + symbolB);
+                        document.getElementById("tokenAsymbol").innerHTML = symbolA;
+                        document.getElementById("tokenBsymbol").innerHTML = symbolB;
+                        document.getElementById("tokenBperTokenA").innerHTML = symbolB + " per " + symbolA;
+                        document.getElementById("tokenAperTokenB").innerHTML = symbolA + " per " + symbolB;
+                        
+                        document.getElementById("buttonSymbolA").innerHTML = "Approve " + symbolA;
+                        document.getElementById("buttonSymbolB").innerHTML = "Approve " + symbolB;
+                    } else {
+                        output = "Error";
+                    }
+                })
+            }
+        } else {
+            output = "Error";
+        }
+    })
+}
+    
+function approve(token) {
+    tokenAAmount = document.getElementById("tokenAAmount").value*COIN;
+    tokenBAmount = document.getElementById("tokenBAmount").value*COIN;
+    if(token == "tokenA") {
+        token = tokenContract.at(tokenA);
+        token.approve(liquidCDAddress, tokenAAmount,(error, result) => (console.log(result)));
+    } else {
+        token = tokenContract.at(tokenB);
+        token.approve(liquidCDAddress, tokenBAmount,(error, result) => (console.log(result)));
+    }
+}
+    
+function addLiquidity() {
+    tokenAAmount = document.getElementById("tokenAAmount").value*COIN;
+    tokenBAmount = document.getElementById("tokenBAmount").value*COIN;
+    if(tokenB == "ETH" || tokenB == "eth" || tokenB == "Eth" || tokenB == "Ethereum" || tokenB == "ethereum") {//this goes somewhere else
+        //addLiquidityETH     
+        liquidCD.addLiquidityETH(tokenA, hours, tokenAAmount, 1, 1, 33136721748,{value: tokenBAmount},(error, result) => (console.log(result)));
+        
+    } else {
+        //addLiquidity
+        liquidCD.addLiquidity(tokenA, tokenB, hours, tokenAAmount, tokenBAmount, 1, 1, 33136721748,(error, result) => (console.log(result)));
+    }
+}
+    
+function goBack() {
+    document.getElementById("wallet").style.display = "block";
+    document.getElementById("buyLPApp").style.display = "none";
+    document.getElementById("approveB").style.display = "block";
+}
+
+function updateTokenAInput() {
+    tokenBAmount = document.getElementById("tokenBAmount").value;
+    document.getElementById("tokenAAmount").value = (_tokenABalance/_tokenBBalance)*tokenBAmount;
+    document.getElementById("sharePer").innerHTML = ((tokenBAmount/_tokenBBalance) * 100).toFixed(4) + "%";
+}
+   
+function updateTokenBInput() {
+    tokenAAmount = document.getElementById("tokenAAmount").value;
+    document.getElementById("tokenBAmount").value = (_tokenBBalance/_tokenABalance)*tokenAAmount;
+    document.getElementById("sharePer").innerHTML = ((tokenAAmount/_tokenABalance) * 100).toFixed(4) + "%";
+}
+
+
+</script>
